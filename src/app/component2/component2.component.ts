@@ -9,16 +9,23 @@ import { Service2Service } from '../service2.service';
 })
 export class Component2Component implements OnInit {
   moviesAfter2005 = [];
-  moviesAfterYear = []
+  moviesAfterYear = [];
+  allMovieList = [];
   year = 2000;
-  constructor(mymovies:Service1Service) { 
+  constructor(mymovies:Service1Service, movieList:Service2Service) { 
+    console.log("in cons")
     this.moviesAfter2005 = mymovies.getMovies(2005);
-    this.moviesAfterYear = mymovies.getMovies(this.year);
+    this.allMovieList = movieList.getMovieList();
   }
 
-  onClickHandler(movieList:Service1Service) {
-    console.log("in click")
-    this.moviesAfterYear = movieList.getMovies(this.year);
+  onClickHandler() {
+    console.log("in click", this.year)
+    this.moviesAfterYear = []
+    this.allMovieList.forEach(element => {
+      if(element.year >= this.year){
+        this.moviesAfterYear.push(element);
+      }
+    });
   }
 
   ngOnInit() {
