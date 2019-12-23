@@ -10,10 +10,10 @@ export class Service1Service {
     this.movies = movie.getMovieList();
   }
 
-  getMovies() {
-    let movieList = [{name:"Baazigar", actor:"Shahrukh", year: 1994}];
+  getMovies(year) {
+    let movieList = [];
     this.movies.forEach(element => {
-      if(element.year > 2005){
+      if(element.year >= year){
         movieList.push(element);
       }
     });

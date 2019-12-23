@@ -1,7 +1,20 @@
 <h2>Question 3 & 4</h2>
-<p> Displaying objects with city Bangalore using directive</p>
+<p> Using one service in another service and use it in controller</p>
 <ul>
     <li *ngFor="let obj of moviesAfter2005">
+        {{"Movie Name:"+obj.name+"  "}}
+        {{"Lead Actor:"+obj.actor+"  "}}
+        {{"Year of Release:"+obj.year+"  "}}
+    </li>
+</ul>
+
+<h2>Question 6</h2>
+<p>Creating a custom filter to toggle the case of given input</p>
+<label>Enter a year (1995-2010):</label>
+<input type="number" [(ngModel)]="year" />
+<button (click)="onClickHandler()">Filter</button>
+<ul>
+    <li *ngFor="let obj of moviesAfterYear">
         {{"Movie Name:"+obj.name+"  "}}
         {{"Lead Actor:"+obj.actor+"  "}}
         {{"Year of Release:"+obj.year+"  "}}
