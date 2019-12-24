@@ -1,0 +1,59 @@
+<h2>Question 8</h2>
+<p>Navigation Menu Rendering</p>
+
+<div style="text-align: center;">
+    <div class="navOption" [style.backgroundColor]="isHomeActive?'rgb(255, 0, 179)':'blue'" (click)="onClickHandler('home')">Home</div>
+    <div class="navOption" [style.backgroundColor]="isProjectActive?'rgb(255, 0, 179)':'blue'" (click)="onClickHandler('project')">Projects</div>
+    <div class="navOption" [style.backgroundColor]="isServiceActive?'rgb(255, 0, 179)':'blue'" (click)="onClickHandler('service')">Services</div>
+    <div class="navOption" [style.backgroundColor]="isContactActive?'rgb(255, 0, 179)':'blue'" (click)="onClickHandler('contact')">Contact</div>
+</div>
+<div class="messageMenu">{{message}}<span [class.selectedMenu]="selectedMenu!=''?true:false">{{selectedMenu}}</span></div>
+
+<h2>Question 9</h2>
+<p>Creating and displaying a ToDo List</p>
+<label>Enter ToDo item:</label>
+<input type="text" [(ngModel)]="todoitem" />
+<button (click)="onAddHandler()">ADD</button>
+<div style="margin: 20px;">
+    ToDo Items
+    <ul>
+        <li *ngFor="let obj of todoList">
+           {{obj}}
+        </li>
+    </ul>
+</div>
+
+<h2>Question 10</h2>
+<p>Creating a form to collect the feedback and display the feedback</p>
+<form #f="ngForm" (ngSubmit)="submit(f)">
+    <table>
+        <tr>
+            <td><label for="employeeName">Employee Name</label></td>
+            <td><input type="text" name="employeeName" required ngModel></td>
+        </tr>
+        <tr>
+            <td><label for="employeeName">Employee Id</label></td>
+            <td><input type="number" name="employeeId" required ngModel></td>
+        </tr>
+        <tr>
+            <td><label for="employeeName">Email ID</label></td>
+            <td><input type="email" name="email" required ngModel></td>
+        </tr>
+        <tr>
+            <td><label for="employeeName">Comments</label></td>
+            <td><input type="textarea" name="comment" required ngModel></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="submit">Submit</button></td>
+        </tr>
+    </table>
+</form>
+<h3>Your response goes here:</h3>
+<div *ngIf="f.valid">
+    Employee Name:{{feedback.employeeName}}<br>
+    Employee Id:{{feedback.employeeId}}<br>
+    Email:{{feedback.email}}<br>
+    Comments:{{feedback.comment}}<br>
+</div>
+
