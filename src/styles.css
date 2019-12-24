@@ -28,3 +28,13 @@
     font-weight: 600;
     
 }
+
+.activeClass {
+    background-color: rgb(255, 0, 179);
+}
+
+.mycard {
+    padding: 5px 10px;
+    margin: 10px;
+    border: 1.5px solid green;
+}

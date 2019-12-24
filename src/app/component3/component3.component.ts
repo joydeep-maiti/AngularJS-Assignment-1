@@ -15,7 +15,8 @@ export class Component3Component implements OnInit {
   todoitem = "";
   todoList = [];
   ename = "";
-  feedback = {}
+  feedback = {};
+  counter = 0
 
   constructor() { }
 
@@ -60,6 +61,10 @@ export class Component3Component implements OnInit {
   submit(f){
     console.log(f);
     this.feedback = f.value
+  }
+
+  btnClickHandler() {
+    this.counter++;
   }
 
   ngOnInit() {
