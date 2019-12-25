@@ -15,6 +15,8 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { EmployeeComponentComponent } from './employee-component/employee-component.component';
 import { TrainingsComponentComponent } from './trainings-component/trainings-component.component';
 import { ProjectsComponentComponent } from './projects-component/projects-component.component';
+import { MyModule1Module } from './my-module1/my-module1.module';
+import { MyModule2Module } from './my-module2/my-module2.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { ProjectsComponentComponent } from './projects-component/projects-compon
       {path:'trainings', component:TrainingsComponentComponent},
       {path:'projects', component:ProjectsComponentComponent},
       {path:'', component:HomeComponentComponent}
-    ])
+    ]),
+    MyModule1Module,
+    MyModule2Module
   ],
   providers: [
     Service1Service,
