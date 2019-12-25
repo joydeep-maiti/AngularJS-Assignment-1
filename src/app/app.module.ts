@@ -17,6 +17,8 @@ import { TrainingsComponentComponent } from './trainings-component/trainings-com
 import { ProjectsComponentComponent } from './projects-component/projects-component.component';
 import { MyModule1Module } from './my-module1/my-module1.module';
 import { MyModule2Module } from './my-module2/my-module2.module';
+import { Log1Service } from './log1.service';
+import { Log2Service } from './log2.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { MyModule2Module } from './my-module2/my-module2.module';
   ],
   providers: [
     Service1Service,
-    Service2Service
+    Service2Service,
+    Log1Service,
+    Log2Service
   ],
   bootstrap: [AppComponent]
 })
