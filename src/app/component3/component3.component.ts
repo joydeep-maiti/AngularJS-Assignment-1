@@ -15,7 +15,12 @@ export class Component3Component implements OnInit {
   todoitem = "";
   todoList = [];
   ename = "";
-  feedback = {};
+  feedback = {
+    employeeName: null,
+    employeeId: null,
+    email: null,
+    comment: null
+  };
   counter = 0
 
   constructor() { }
